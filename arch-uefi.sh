@@ -9,7 +9,7 @@ echo "kamino" >> /etc/hostname
 echo "127.0.0.1	localhost" >> /etc/hosts
 echo "::1	localhost" >> /etc/hosts
 echo "127.0.1.1	kamino.localdomain	kamino" >> /etc/hosts
-echo root:password | chpasswd
+echo "root:password" | chpasswd
 pacman -S grub efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools base-devel linux-headers avahi xdg-user-dirs xdg-utils gvfs gvfs-smb nfs-utils inetutils dnsutils bluez bluez-utils cups alsa-utils pipewire pipewire-alsa pipewire-pulse pipewire-jack bash-completion openssh rsync reflector pacman-contrib
 
 # pacman -S --noconfirm xf86-video-manager
@@ -37,7 +37,7 @@ systemctl enable paccache.timer
 systemctl enable reflector.timer
 
 useradd -m ahughes03
-echo ahughes03:password | chpasswd
+echo "ahughes03:password" | chpasswd
 usermod -aG wheel ahughes03
 echo "ahughes03 ALL=(ALL) ALL" >> /etc/sudoers.d/ahughes03
 
